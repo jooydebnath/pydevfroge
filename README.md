@@ -1,7 +1,7 @@
 # DevForge — Dynamic Python Project Bootstrap & Automation
 
 ```bash
-pip install devforge
+pip install pydevforge
 devforge
 ```
 
@@ -9,10 +9,13 @@ DevForge is a **provider-based, composable project generator**. No fixed
 templates, no giant `if/elif` chains — every technology is a provider that
 contributes packages, environment, files, Docker services and wizard questions.
 
+> Note: the PyPI distribution is `pydevforge`, the import package stays
+> `devforge` (`from devforge import ProjectBuilder`) and the CLI stays `devforge`.
+
 ## Quick start
 
 ```bash
-pip install devforge
+pip install pydevforge
 devforge --help
 devforge create --help
 

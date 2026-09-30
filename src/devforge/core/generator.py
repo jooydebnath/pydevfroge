@@ -52,7 +52,7 @@ build-backend = "hatchling.build"
 
 README_TEMPLATE = """# {name}
 
-Generated with [DevForge](https://github.com/example/devforge).
+Generated with [DevForge](https://github.com/jooydebnath/devfroge).
 
 ## Stack
 
