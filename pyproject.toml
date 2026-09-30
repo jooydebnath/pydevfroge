@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "devforge"
+version = "0.5.0"
+description = "Dynamic Python project bootstrap and development environment automation"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "DevForge Contributors" }]
+maintainers = [{ name = "DevForge Contributors" }]
+requires-python = ">=3.11"
+keywords = ["scaffolding", "bootstrap", "devops", "docker", "project-generator"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "typer>=0.12",
+    "rich>=13.0",
+    "pydantic>=2.0",
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+    "packaging>=24.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4", "build>=1.0", "pre-commit>=3.0"]
+test = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/example/devforge"
+Documentation = "https://github.com/example/devforge#readme"
+Repository = "https://github.com/example/devforge"
+Issues = "https://github.com/example/devforge/issues"
+Changelog = "https://github.com/example/devforge/blob/main/CHANGELOG.md"
+
+[project.scripts]
+devforge = "devforge.cli.main:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/devforge"]
+
+[tool.hatch.build]
+artifacts = ["src/devforge/templates/**/*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.devforge]
+registry_group = "devforge.providers"
